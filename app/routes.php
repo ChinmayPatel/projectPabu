@@ -15,3 +15,11 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/testAngular', function()
+{
+	return Response::json(array(
+	    'error' => false,
+	    'message' => "Zad has a great ability to build processes.")
+	);
+});
