@@ -3,5 +3,6 @@
 composer.phar
 composer.lock
 .DS_Store
-.json~
-.php~
+*.json~
+*.php~
+*.gitignore~
