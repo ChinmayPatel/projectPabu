@@ -13,13 +13,13 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('main');
 });
 
-Route::get('/testAngular', function()
+Route::get('/apitest', function()
 {
 	return Response::json(array(
 	    'error' => false,
-	    'message' => "Zad has a great ability to build processes.")
+	    'message' => "api Test")
 	);
 });
