@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.0.*",
-		"rtablada/package-installer": "dev-master"
+		"rtablada/package-installer": "dev-master",
+		"way/generators": "1.0.*@dev"
 	},
 	"autoload": {
 		"classmap": [
