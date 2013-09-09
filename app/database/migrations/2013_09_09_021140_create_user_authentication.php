@@ -15,10 +15,10 @@ class CreateUserAuthentication extends Migration {
 		Schema::create('user_account_information', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
 			$table->string('user_name', 32)->unique();
 			$table->string('password', 128);
 			$table->decimal('account_balance', 32, 2);
+			$table->timestamps();
 		});
 	}
 

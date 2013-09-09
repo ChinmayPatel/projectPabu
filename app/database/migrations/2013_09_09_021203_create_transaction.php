@@ -15,11 +15,11 @@ class CreateTransaction extends Migration {
 		Schema::create('transaction', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
-			$table->foreign('allocated_grant_id')->references('id')->on('grant');
+			$table->integer('allocated_grant_id');
 			$table->string('merchant', 32);
-			$table->date('transaction_date');
 			$table->decimal('amount', 32, 2);
+			$table->date('transaction_date');
+			$table->timestamps();
 		});
 	}
 
