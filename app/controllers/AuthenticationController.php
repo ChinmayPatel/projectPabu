@@ -2,6 +2,7 @@
 
 class AuthenticationController extends \BaseController {
 
+	protected $resource = "Auth";
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,6 +10,7 @@ class AuthenticationController extends \BaseController {
 	 */
 	public function index()
 	{
+
 		Auth::logout();
 		return Response::json([
 			'flash' => 'you have been disconnected'],
@@ -33,6 +35,13 @@ class AuthenticationController extends \BaseController {
 	 */
 	public function store()
 	{
+		$response = new AppResponse();
+
+		return Response::json([
+			'flash' => 'Authentication failed'],
+			401
+			);
+
 		$credentials = array(
 			'email' => Input::get('email'),
 			'password' => Input::get('password')

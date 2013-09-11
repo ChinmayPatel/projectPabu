@@ -180,6 +180,10 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
+		// // Other Aliases
+
+		'AppResponse'     => 'AppResponse\AppResponse',
+
 	),
 
 );
