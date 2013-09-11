@@ -24,7 +24,6 @@ class AuthenticationController extends \BaseController {
 	public function create()
 	{
 		//
-		dd( "Creating a new user " );
 	}
 
 	/**
