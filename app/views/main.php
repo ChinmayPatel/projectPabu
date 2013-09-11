@@ -1,53 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" ng-app="projectMomoTestPage">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Project Momo Test Page</title>
+    <meta charset="utf-8">
+    <title>Laravel4 AngularJS Authentication and security</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="Project Momo Test Page">
+    <!-- CSS -->
+    <link href="app/css/vendor/bs-responsive-2.css" rel="stylesheet">
+    <link href="app/css/vendor/bs-theme.css" rel="stylesheet">
+    <link href="app/css/vendor/bs-v3.css" rel="stylesheet">
 
-<script src="js/vendor/angular.v1.0.8.js"></script>
-<script src="js/vendor/ui-select2.js"></script> 
-<script src="js/vendor/ui-bootstrap-tpls-v0.5.0.js"></script>
-<script src="js/assets/app.js"></script>
-
-<link href="css/vendor/bootstrap.v3.0.0.css" rel="stylesheet" />
+    <!-- SCRIPTS -->
+	<script src="app/lib/angular/angular.min.js"></script>
+	<script src="app/lib/angular/angular-resource.min.js"></script>
+	<script src="app/lib/angular/angular-sanitize.min.js"></script>
+	<script src="app/js/app.js"></script>
+	<script src="app/js/controllers.js"></script>
+	<script src="app/js/directives.js"></script>
+	<script src="app/js/filters.js"></script>
+	<script src="app/js/services.js"></script>
 
 </head>
-<body class="ng-cloak" ng-controller="MainCtrl">
 
- <header class="navbar navbar-default navbar-fixed-top">
-  <ul class="nav navbar-nav">
-   <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Project Momo <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-     <li><a href="#">getMomoData</a></li>
-    </ul>
-   </li>
- </div>
- </header>
-
- <div style="margin: 64px;"></div>
- <div role="main">
-  <section id="alert">
-  <div class="page-header">
-   <h1>Project Momo API</h1>
-  </div>
-  <div class="row-fluid">
-   <div class="span">
-    <div ng-controller="MomoDemoCtrl">
-     <alert ng-repeat="alert in alerts" type="alert.type" close="closeMomoAlert($index)">{{alert.msg}}</alert>
-     <button class='btn' ng-click="addMomoAlert()">Test API Momo Alert</button>
-    </div>
-
-   </div>
-  </div>
-  <hr>
-
-  </section>
- </div>
-
+<body ng-app="myApp">
+	<div class="container" ng-view></div>
 </body>
 </html>

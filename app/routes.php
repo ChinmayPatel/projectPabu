@@ -16,6 +16,12 @@ Route::get('/', function()
 	return View::make('main');
 });
 
+Route::group(array('prefix' => 'service'), function() {
+	Route::resource('authenticate', 'AuthenticationController');
+	Route::resource('user', 'UserController');
+});
+
+
 Route::get('/apitest', function()
 {
 	return Response::json(array(
