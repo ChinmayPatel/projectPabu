@@ -7,10 +7,16 @@ angular.module('myApp')
 			Authenticate.save({
 				'email': $sanitize($scope.email),
 				'password': $sanitize($scope.password)
-			},function() {
-				$scope.flash = ''
-				$location.path('/home');
-			},function(response){
+			},function(response) { // success
+
+				if( response.error == 0 ){
+					$scope.flash = ''
+					$location.path('/home');
+				} else {
+					$scope.flash = response.error.message;
+				}
+
+			},function(response){ // error
 				$scope.flash = response.data.flash
 			})
 		}

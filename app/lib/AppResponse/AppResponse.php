@@ -1,6 +1,6 @@
 <?php namespace AppResponse;
 
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Request;
 
 class AppResponse extends Response {
@@ -35,7 +35,7 @@ class AppResponse extends Response {
 
     public function __construct()
     {
-    	$this->resource = "message" ; // TODO: Really default is a message?
+    	$this->resource = NULL ; // TODO: Really default is a message?
 		$this->url = Request::url();
 		$this->error = 0;
 		$this->data = NULL;
@@ -43,28 +43,31 @@ class AppResponse extends Response {
 
     public function json_ok()
     {
-		$body = $this->to_array();
+		$body = $this->toArray();
 		return Response::json( $body, 200 );
     }
 
-    public function to_array()
+    public function json_401( $message = 'Authentication Failure' )
     {
-		if( is_object( $obj ) ) $obj = (array) $obj;
+    	$this->error = array();
+    	$this->error['code'] = '401';
+    	$this->error['message'] = $message;
 
-		if( is_array( $obj ) ) 
+		$body = $this->toArray();
+		return Response::json( $body, 200 );
+    }
+
+
+    public function toArray()
+    {
+    	$arr = array();
+
+		foreach( $this as $key => $val) 
 		{
-			$new = array();
-			foreach($obj as $key => $val) 
-			{
-				$new[$key] = toArray($val);
-			}
-		}
-		else 
-		{ 
-			$new = $obj;
+			$arr[$key] = $val;
 		}
 
-		return $new;
+		return $arr;
     }
 
 

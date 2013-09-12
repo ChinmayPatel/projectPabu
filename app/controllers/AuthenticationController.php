@@ -8,6 +8,25 @@ class AuthenticationController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
+	protected $response = NULL;
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+
+
+
+	/**
+	 * Constructor to initialize the response.
+	*/
+	public function __construct()
+	{
+		$this->response = new AppResponse();
+		$this->response->resource = $this->resource;
+	}
+
 	public function index()
 	{
 
@@ -35,28 +54,19 @@ class AuthenticationController extends \BaseController {
 	 */
 	public function store()
 	{
-		$response = new AppResponse();
-
-		return Response::json([
-			'flash' => 'Authentication failed'],
-			401
-			);
 
 		$credentials = array(
 			'email' => Input::get('email'),
 			'password' => Input::get('password')
 		);
+		// dd( $credentials );
 
-		if ( Auth::attempt( $credentials ) ) {
-			return Response::json([
-				'user' => Auth::user()->toArray()],
-				202
-				);
-		}else{
-			return Response::json([
-				'flash' => 'Authentication failed'],
-				401
-				);
+		if ( Auth::attempt( $credentials ) ) 
+		{
+			return $this->response->json_ok();
+		}else
+		{
+			return $this->response->json_401();
 		}
 	}
 
