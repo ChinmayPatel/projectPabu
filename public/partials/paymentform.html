@@ -1,15 +1,16 @@
-<form id="simplify-payment-form" action="" method="POST">
+<div ng-controller="PaymentFormController">
+<form class="form-horizontal" ng-submit="submitPayment()">
     <div>
         <label>Credit Card Number: </label>
-        <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus />
+        <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus ng-model="card.ccnumber" />
     </div>
     <div>
         <label>CVC: </label>
-        <input id="cc-cvc" type="text" maxlength="3" autocomplete="off" value=""/>
+        <input id="cc-cvc" type="text" maxlength="3" autocomplete="off" value="" ng-model="card.cvc" />
     </div>
     <div>
         <label>Expiry Date: </label>
-        <select id="cc-exp-month">
+        <select id="cc-exp-month"  ng-model="card.expmonth">
             <option value="01">Jan</option>
             <option value="02">Feb</option>
             <option value="03">Mar</option>
@@ -23,7 +24,7 @@
             <option value="11">Nov</option>
             <option value="12">Dec</option>
         </select>
-        <select id="cc-exp-year">
+        <select id="cc-exp-year" ng-model="card.expyear">
             <option value="13">2013</option>
             <option value="14">2014</option>
             <option value="15">2015</option>
