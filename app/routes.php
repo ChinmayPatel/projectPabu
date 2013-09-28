@@ -19,6 +19,7 @@ Route::get('/', function()
 Route::group(array('prefix' => 'service'), function() {
 	Route::resource('authenticate', 'AuthenticationController');
 	Route::resource('user', 'UserController');
+	Route::resource('userCards', 'UserCardsController');
 });
 
 

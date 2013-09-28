@@ -22,6 +22,9 @@ angular.module( 'projectPabuTestPage'
                 .when( '/apitest', 
                      { templateUrl:'partials/apitest.html' }
                      )
+                .when( '/paymentform', 
+                     { templateUrl:'partials/paymentform.html' }
+                     )
                 .otherwise( { redirectTo:'/login' } )
             } 
           ]

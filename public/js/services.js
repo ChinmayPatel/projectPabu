@@ -27,5 +27,9 @@ angular.module('projectPabuTestPage')
             { return $http.get('http://ezadkielmarbella.apiary.io/getMomoTestData');
             }
         }
-});
+})
 
+.factory( 'UserCards', function($resource)
+{
+    return $resource("/service/userCards/");
+});
