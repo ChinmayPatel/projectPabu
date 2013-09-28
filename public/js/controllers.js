@@ -57,6 +57,23 @@ angular.module('projectPabuTestPage')
     }
 })
 
+.controller( 'PaymentFormController', function( $scope ) 
+{
+  $scope.submitPayment = function()
+    {
+        SimplifyCommerce.generateToken({
+            key: "sbpb_ODVhOWQ4NTAtMTNkOC00ZjQ3LWE0NjItNmQ1OTc2OGY1OWEz", // Sandbox
+            card: {
+                number: $scope.card.ccnumber, //$("#cc-number").val(),
+                cvc: $scope.card.cvc, //$("#cc-cvc").val(),
+                expMonth: $scope.card.exprmonth ,//$("#cc-exp-month").val(),
+                expYear: $scope.card.expyear //$("#cc-exp-year").val()
+            }
+        }, simplifyResponseHandler( response )
+      ) 
+    };
+})
+
 .controller( 'HomeController', function( $scope, $location, Authenticate )
 {
     $scope.title = "Dashboard";
