@@ -57,7 +57,7 @@ angular.module('projectPabuTestPage')
     }
 })
 
-.controller( 'PaymentFormController', function( $scope ) 
+.controller( 'PaymentFormController', function( $scope, $http )
 {
   $scope.submitPayment = function()
     {
@@ -69,9 +69,13 @@ angular.module('projectPabuTestPage')
                 expMonth: $scope.card.expmonth ,//$("#cc-exp-month").val(),
                 expYear: $scope.card.expyear //$("#cc-exp-year").val()
             }
-        }, function simplifyResponseHandler( response )
+        }, function ( response )
         {
-          alert(response);
+          console.log(response);
+            $.post('/service/userCards', { 'test': 'hi'})
+                .then( function(response) {
+                    console.log(response);
+                });
         }
       ) 
     };
@@ -128,4 +132,44 @@ angular.module('projectPabuTestPage')
     $scope.closeMomoAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-});
+})
+
+.controller( 'transactionsController', function ( $scope ) {
+        $scope.transactions = [
+            {
+                id: 1,
+                date: '2013/09/27 12:05:23',
+                amount: 'CAD 999.00',
+                clientId: 1,
+                clientName: 'Chinmay',
+                merchantId: 1334,
+                merchantName: 'Club XXX',
+                notes: 'This was awesome',
+                pictures: [
+                    { thumb: '/pictures/thumb1.jpg', image: '/pictures/image1.jpg' },
+                    { thumb: '/pictures/thumb2.jpg', image: '/pictures/image2.jpg' }
+                ],
+                tags: [
+                    'club',
+                    'entertainment'
+                ]
+            },
+            {
+                id: 2,
+                date: '2013/09/27 12:22:05',
+                amount: 'CAD 107.00',
+                clientId: 1,
+                clientName: 'Zad',
+                merchantId: 988,
+                merchantName: 'Subway',
+                notes: 'Delicious',
+                pictures: [
+                    { thumb: '/pictures/thumb1.jpg', image: '/pictures/image1.jpg' },
+                    { thumb: '/pictures/thumb2.jpg', image: '/pictures/image2.jpg' }
+                ],
+                tags: [
+                    'food'                ]
+            },
+        ];
+    })
+;
