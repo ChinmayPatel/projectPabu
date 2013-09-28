@@ -66,10 +66,13 @@ angular.module('projectPabuTestPage')
             card: {
                 number: $scope.card.ccnumber, //$("#cc-number").val(),
                 cvc: $scope.card.cvc, //$("#cc-cvc").val(),
-                expMonth: $scope.card.exprmonth ,//$("#cc-exp-month").val(),
+                expMonth: $scope.card.expmonth ,//$("#cc-exp-month").val(),
                 expYear: $scope.card.expyear //$("#cc-exp-year").val()
             }
-        }, simplifyResponseHandler( response )
+        }, function simplifyResponseHandler( response )
+        {
+          alert(response);
+        }
       ) 
     };
 })
