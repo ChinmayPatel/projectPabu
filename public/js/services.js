@@ -32,4 +32,9 @@ angular.module('projectPabuTestPage')
 .factory( 'UserCards', function($resource)
 {
     return $resource("/service/userCards/");
+})
+
+.factory( 'CardAccess', function($resource)
+{
+    return $resource("/service/CardAccess/");
 });

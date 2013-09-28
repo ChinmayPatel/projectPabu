@@ -1,6 +1,6 @@
 <?php
 
-class UserCardsController extends \BaseController {
+class CardAccessController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,11 +9,7 @@ class UserCardsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$user = Auth::user();
-		$record = UserCards::get_user_cards( $user->id );
-		$this->response = new AppResponse();
-		$this->response->data = $record->toArray();
-		return $this->response->json_ok();
+		//
 	}
 
 	/**
@@ -33,16 +29,22 @@ class UserCardsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
-		$user = Auth::user() ;
-		$card_name = Input::get('cc-name') ;
-		$mastercard_key = Input::get('simplifyToken') ;
-		$new_card = new UserCards();
-		$new_card->user_id = $user->id ;
-		$new_card->card_name = $card_name ;
-		$new_card->card_token = $mastercard_key ;
-		$new_card->save();
-		return TRUE ;
+		return json_encode( Input::all());
+		$user = Auth::user();
+		$card = Input::get('card_id');
+		$receiver_email = Input::get('reciver_email');
+		$amount = Input::get('amount');
+		$period = Input::get('period');
+		$reciver = User::where('email' , '=' , $receiver_email )->first();
+		$grant_access = New CardGrantedAccess();
+		$grant_access->sender_id = $user->id ;
+		$grant_access->reciver_id = $reciver->id ;
+		$grant_access->card_id = $card;
+		$grant_access->amount_granted = $amount ; 
+		$grant_access->expires_in = $period ;
+		$grant_access->save();
+
+		return TRUE;
 	}
 
 	/**
