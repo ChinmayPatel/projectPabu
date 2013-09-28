@@ -1,6 +1,10 @@
 <div ng-controller="PaymentFormController">
 <form class="form-horizontal" ng-submit="submitPayment()">
     <div>
+        <label>Credit Card Name: </label>
+        <input id="cc-name" type="text" maxlength="3" autocomplete="off" value="" ng-model="card.name" />
+    </div>
+    <div>
         <label>Credit Card Number: </label>
         <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus ng-model="card.ccnumber" />
     </div>
