@@ -15,6 +15,7 @@ class CreateUserCardsTable extends Migration {
         {
             $table->increments('id');
             $table->integer('user_id');
+            $table->string('card_name', 50 );
             $table->string('card_token', 300 );
             $table->timestamps();    
         });

@@ -17,7 +17,7 @@ class CreateCardGrantedAccessTable extends Migration {
             $table->integer('sender_id');
             $table->integer('receiver_id');
             $table->integer('card_id');
-            $table->integer('amount_grabted');
+            $table->integer('amount_granted');
             $table->integer('expires_in');
             $table->timestamps();    
         });

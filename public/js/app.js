@@ -25,6 +25,9 @@ angular.module( 'projectPabuTestPage'
                 .when( '/paymentform', 
                      { templateUrl:'partials/paymentform.html' }
                      )
+                .when( '/grantAccess', 
+                     { templateUrl:'partials/grantaccess.html' }
+                     )
                 .otherwise( { redirectTo:'/login' } )
             } 
           ]

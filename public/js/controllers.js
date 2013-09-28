@@ -81,6 +81,28 @@ angular.module('projectPabuTestPage')
     };
 })
 
+.controller( 'CardAccessController', function( $scope , CardAccess, UserCards ) 
+{
+  UserCards.get( function( data )
+  {
+    $scope.userCards = data.data;
+  });
+    //alert( $scope.userCards );
+
+
+  $scope.submitCardAccess = function()
+    {
+      CardAccess.save(  
+        {
+          'reciver_email': $scope.cardaccess.reciver_email
+          , 'amount': $scope.cardaccess.amount
+          , 'period': $scope.cardaccess.period
+          , 'credit_id': $scope.cardaccess.credit_id
+        }
+        )
+    };
+})
+
 .controller( 'HomeController', function( $scope, $location, Authenticate )
 {
     $scope.title = "Dashboard";

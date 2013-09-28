@@ -39,6 +39,7 @@
         <li><a href="#login">login</a></li>
         <li><a href="#apitest">apiTest</a></li>        
         <li><a href="#paymentform">paymentform</a></li>
+        <li><a href="#grantAccess">grantAccess</a></li>
       </ul>
    </li>
   </header>

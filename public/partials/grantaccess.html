@@ -1,0 +1,20 @@
+<div ng-controller="CardAccessController">
+<form class="form-horizontal" ng-submit="submitCardAccess()">
+    <div>
+        <label>Reciver Email: </label>
+        <input id="reciver_email" type="text" maxlength="20" autocomplete="off" value="" autofocus ng-model="cardaccess.reciver_email" />
+    </div>
+    <div>
+        <label>Amount: </label>
+        <input id="amount" type="text" maxlength="3" autocomplete="off" value="" ng-model="cardaccess.amount" />
+    </div>
+    <div>
+        <label>Grant period in hours : </label>
+        <input id="period" type="text" maxlength="3" autocomplete="off" value="" ng-model="cardaccess.period" />
+    </div>
+    <div>
+        <label>Choose Credit Card: </label>
+    <select id="cc-exp-month"  ng-model="cardaccess.credit_id"  ng-options="usercard.card_name for usercard in userCards"></select>
+    </div>
+    <button id="accessgrant-proccess-btn" type="submit">Grant Access</button>
+</form>
