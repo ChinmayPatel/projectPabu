@@ -30,7 +30,13 @@ class UserCardsController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		dd( $input );
+		$user = Auth::user() ;
+		$mastercard_key = Input::get('simplifyToken') ;
+		$new_card = new UserCads();
+		$new_card->user_id = $user->id ;
+		$new_card->card_token = $mastercard_key ;
+		$new_card->save();
+		return TRUE ;
 	}
 
 	/**
