@@ -34,15 +34,18 @@ class UserCardsController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
+		$api_response =  Input::get('response');
 		$user = Auth::user() ;
-		$card_name = Input::get('cc-name') ;
-		$mastercard_key = Input::get('simplifyToken') ;
+		$card_name = Input::get('name') ;
+		$mastercard_key = $api_response['id'] ;
 		$new_card = new UserCards();
 		$new_card->user_id = $user->id ;
 		$new_card->card_name = $card_name ;
 		$new_card->card_token = $mastercard_key ;
 		$new_card->save();
-		return TRUE ;
+
+		$this->response = new AppResponse();
+		return $this->response->json_ok();
 	}
 
 	/**
