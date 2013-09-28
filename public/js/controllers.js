@@ -72,7 +72,7 @@ angular.module('projectPabuTestPage')
         }, function ( response )
         {
           console.log(response);
-            $.post('/service/userCards', { 'test': 'hi'})
+            $.post('/service/userCards', response)
                 .then( function(response) {
                     console.log(response);
                 });
