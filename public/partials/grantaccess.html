@@ -14,7 +14,7 @@
     </div>
     <div>
         <label>Choose Credit Card: </label>
-    <select id="cc-exp-month"  ng-model="cardaccess.credit_id"  ng-options="usercard.card_name for usercard in userCards"></select>
+    <select id="cc-exp-month"  ng-model="cardaccess.credit_id"  value="usercard.id" ng-options="usercard.card_name for usercard in userCards"></select>
     </div>
     <button id="accessgrant-proccess-btn" type="submit">Grant Access</button>
 </form>

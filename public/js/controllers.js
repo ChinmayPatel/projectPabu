@@ -97,7 +97,7 @@ angular.module('projectPabuTestPage')
           'reciver_email': $scope.cardaccess.reciver_email
           , 'amount': $scope.cardaccess.amount
           , 'period': $scope.cardaccess.period
-          , 'credit_id': $scope.cardaccess.credit_id
+          , 'credit_id': $scope.cardaccess.credit_id.id
         }
         )
     };
