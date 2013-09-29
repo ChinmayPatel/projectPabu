@@ -1,20 +1,24 @@
-<div ng-controller="PaymentFormController">
+<div ng-controller="PaymentFormController" class="span4 offset4">
+<h3>Payment Form</h3>
 <form class="form-horizontal" ng-submit="submitPayment()">
     <div>
         <label>Credit Card Name: </label>
         <input id="cc-name" type="text" autocomplete="off" value="" ng-model="card.name" />
     </div>
+    <br />
     <div>
         <label>Credit Card Number: </label>
         <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus ng-model="card.ccnumber" />
     </div>
+    <br />
     <div>
         <label>CVC: </label>
         <input id="cc-cvc" type="text" maxlength="3" autocomplete="off" value="" ng-model="card.cvc" />
     </div>
+    <br />
     <div>
-        <label>Expiry Date: </label>
-        <select id="cc-exp-month"  ng-model="card.expmonth">
+        <label>Expiry Date:</label>
+        <select id="cc-exp-month" class="input-small" ng-model="card.expmonth">
             <option value="01">Jan</option>
             <option value="02">Feb</option>
             <option value="03">Mar</option>
@@ -27,8 +31,8 @@
             <option value="10">Oct</option>
             <option value="11">Nov</option>
             <option value="12">Dec</option>
-        </select>
-        <select id="cc-exp-year" ng-model="card.expyear">
+        </select>&nbsp;&nbsp;&nbsp;
+        <select id="cc-exp-year" class="input-small"  ng-model="card.expyear">
             <option value="13">2013</option>
             <option value="14">2014</option>
             <option value="15">2015</option>
@@ -41,5 +45,6 @@
             <option value="22">2022</option>
         </select>
     </div>
-    <button id="process-payment-btn" type="submit">Process Payment</button>
+    <br />
+    <button id="process-payment-btn" class="btn btn-primary" type="submit">Process Payment</button>
 </form>

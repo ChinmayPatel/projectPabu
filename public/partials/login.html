@@ -1,5 +1,5 @@
-<div ng-controller="LoginController">
-<h1>Login Form</h1>
+<div ng-controller="LoginController" class="span4 offset4">
+<h3>Login Form</h3>
 <hr>
 <div class="alert" ng-show="flash" ng-bind="flash"></div>
 <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
@@ -19,7 +19,7 @@
     </div>
     <div class="control-group">
         <div class="controls">
-            <button type="submit" class="btn">Sign in</button>
+            <button type="submit"  class="btn btn-primary"  class="btn">Sign in</button>
         </div>
     </div>
 </form>

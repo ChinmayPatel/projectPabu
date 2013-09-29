@@ -17,7 +17,16 @@
     <script src="lib/js/angular.js"></script>
     <script src="lib/js/angular-resource.js"></script>
     <script src="lib/js/angular-sanitize.js"></script>
-    <script src="lib/js/ui-bootstrap-tpls.js"></script>
+    <script src="lib/js/ui-bootstrap-tpls.js"></script>    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="lib/css/bootstrap.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="lib/css/style.css" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="lib/css/font-awesome.css" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
 
     <script type="text/javascript" src="https://www.simplify.com/commerce/v1/simplify.js"></script>
 
@@ -35,30 +44,36 @@
 </head>
 
 <body class="ng-cloak" ng-controller="MainCtrl">
-
-<header class="navbar navbar-default navbar-fixed-top">
-    <ul class="nav navbar-nav">
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Project Pabu <b class="caret"></b></a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a href="#home">home</a></li>
-                <li><a href="#login">login</a></li>
-                <li><a href="#apitest">apiTest</a></li>
-                <li><a href="#paymentform">paymentform</a></li>
-                <li><a href="#grantAccess">grantAccess</a></li>
-                <li><a href="#userslist">userslist</a></li>
-                <li><a href="#report">report</a></li>
-                <li><a href="#transactions">transactions</a></li>
-            </ul>
-        </li>
-</header>
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <img class="logo" src="lib/img/spendalert-logo1.png" alt="SpendAlert logo" >
+            </div>
+            <!-- MENU
+        ============================= -->
+            <div class="span8">
+                <nav class="nav-top">
+                    <ul class="nav nav-pills top-menu">
+                    <li class="active"><a href="#home">home</a></li>
+                    <li><a href="#login">login</a></li>
+                    <li><a href="#apitest">apiTest</a></li>
+                    <li><a href="#paymentform">paymentform</a></li>
+                    <li><a href="#grantAccess">grantAccess</a></li>
+                    <li><a href="#userslist">userslist</a></li>
+                    <li><a href="#report">report</a></li>
+                    <li><a href="#transactions">transactions</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!--/row-->
+        </div>
+    </header>
+    <!--/slider-100-->
 
 <div style="margin: 64px;">
 
     <div class="row-fluid">
         <div class="span">
-            <h1>Project Pabu</h1>
-
             <div ng-view></div>
         </div>
     </div>
