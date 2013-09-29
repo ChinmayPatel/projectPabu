@@ -17,6 +17,7 @@
     <script src="lib/js/angular.js"></script>
     <script src="lib/js/angular-resource.js"></script>
     <script src="lib/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="lib/js/ng-grid-2.0.7.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls.js"></script>    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="lib/css/bootstrap.css" />
@@ -40,7 +41,6 @@
     <script src="lib/js/nv.d3.js"></script>
     <script src="lib/js/nvd3Directives.js"></script>
 
-    <script type="text/javascript" src="lib/js/ng-grid-2.0.7.min.js"></script>
 </head>
 
 <body class="ng-cloak" ng-controller="MainCtrl">
