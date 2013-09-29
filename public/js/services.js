@@ -37,4 +37,9 @@ angular.module('projectPabuTestPage')
 .factory( 'CardAccess', function($resource)
 {
     return $resource("/service/CardAccess/");
+})
+
+.factory( 'UserTransaction', function($resource)
+{
+    return $resource("/service/userTransaction/");
 });

@@ -251,48 +251,22 @@ angular.module('projectPabuTestPage')
     };
 })
 
-.controller( 'transactionsController', function ( $scope ) {
-        $scope.data = [
-            {
-                id: 1,
-                date: '2013/09/27 12:05:23',
-                amount: 'CAD 999.00',
-                clientId: 1,
-                clientName: 'Chinmay',
-                merchantId: 1334,
-                merchantName: 'Club XXX',
-                notes: 'This was awesome',
-                pictures: [
-                    { thumb: '/pictures/thumb1.jpg', image: '/pictures/image1.jpg' },
-                    { thumb: '/pictures/thumb2.jpg', image: '/pictures/image2.jpg' }
-                ],
-                tags: [
-                    'club',
-                    'entertainment'
-                ]
-            },
-            {
-                id: 2,
-                date: '2013/09/27 12:22:05',
-                amount: 'CAD 107.00',
-                clientId: 1,
-                clientName: 'Zad',
-                merchantId: 988,
-                merchantName: 'Subway',
-                notes: 'Delicious',
-                pictures: [
-                    { thumb: '/pictures/thumb1.jpg', image: '/pictures/image1.jpg' },
-                    { thumb: '/pictures/thumb2.jpg', image: '/pictures/image2.jpg' }
-                ],
-                tags: [
-                    'food'                ]
-            },
-        ];
-
+.controller( 'transactionsController', function ( $scope , UserTransaction ) {
+        UserTransaction.get( function( data )
+        {
+          $scope.data = data.data ;
+          console.log ( $scope.data );
+        } );
         $scope.gridOptions = {
             data: 'data',
             columnDefs: [
-
+                {field:'id', visible: false, width: 0}
+              , {field:'spender_name', displayName:'Spender Name' }
+              , {field:'card_name', displayName:'Card Name' }
+              , {field:'marchant_name', displayName:'Merchant Name'}
+              , {field:'amount', displayName:'Amount',cellTemplate: 'partials/amountcolcell.html'}
+              , {field:'notes', displayName: 'Notes'}
+              , {field:'created_at', displayName:'Date Of Transaction'}
             ]
         };
     })
