@@ -3,6 +3,7 @@ angular.module( 'projectPabuTestPage'
                 , 'ngSanitize'
                 , 'ui.bootstrap'
                 , 'nvd3ChartDirectives'
+                , 'ngGrid'
                 ]
               )
 

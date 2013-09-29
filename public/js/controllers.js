@@ -219,7 +219,7 @@ angular.module('projectPabuTestPage')
 })
 
 .controller( 'transactionsController', function ( $scope ) {
-        $scope.transactions = [
+        $scope.data = [
             {
                 id: 1,
                 date: '2013/09/27 12:05:23',
@@ -255,6 +255,13 @@ angular.module('projectPabuTestPage')
                     'food'                ]
             },
         ];
+
+        $scope.gridOptions = {
+            data: 'data',
+            columnDefs: [
+
+            ]
+        };
     })
 .controller( 'UsersListController', function( $scope ,  $resource , User ) 
 {
