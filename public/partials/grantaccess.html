@@ -1,6 +1,7 @@
 <div ng-controller="CardAccessController" class="span4 offset4">
 <h3>Grant Access To User Form</h3>
 <form class="form-horizontal" ng-submit="submitCardAccess()">
+    <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
     <div>
         <label>Select User: </label>
         <select id="receiver_email"  ng-model="cardaccess.receiver_email"  autofocus ng-options="user.user_name for user in Userlist">"></select>
