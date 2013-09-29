@@ -1,0 +1,18 @@
+<div ng-controller="UsersListController">
+<div class="pull-left">
+    <ul class="thumbnails">
+	    <li class="span5 clearfix" ng-repeat="user in Userlist" data-email="{{ user.email }}" >
+		    <div class="thumbnail clearfix">
+			    <img src="http://lorempixel.com/400/200/" alt="user.user_name " class="pull-left span2 clearfix" style='margin-right:10px'>
+			    <div class="caption" class="pull-left" data-email="{{ user.email }}">
+				    <a ng-click="select_user({{ user.id }})"  class="btn btn-primary icon pull-right">Select</a>
+        			<h4>
+				    <a href="#" >{{ user.user_name }}</a>
+				    </h4>
+				    <small><b>{{ user.email }}</b></small>
+			    </div>
+		    </div>
+	    </li>
+    </ul>
+</div>
+</div>

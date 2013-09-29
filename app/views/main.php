@@ -40,6 +40,7 @@
         <li><a href="#apitest">apiTest</a></li>        
         <li><a href="#paymentform">paymentform</a></li>
         <li><a href="#grantAccess">grantAccess</a></li>
+        <li><a href="#userslist">userslist</a></li>
       </ul>
    </li>
   </header>

@@ -28,6 +28,9 @@ angular.module( 'projectPabuTestPage'
                 .when( '/grantAccess', 
                      { templateUrl:'partials/grantaccess.html' }
                      )
+                .when( '/userslist', 
+                     { templateUrl:'partials/userlist.html' }
+                     )
                 .otherwise( { redirectTo:'/login' } )
             } 
           ]

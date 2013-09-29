@@ -9,7 +9,11 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$user = Auth::user();
+		$record = User::all();
+		$this->response = new AppResponse();
+		$this->response->data = $record->toArray();
+		return $this->response->json_ok();
 	}
 
 	/**
@@ -52,7 +56,11 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$user = Auth::user();
+		$record = User::find($id);
+		$this->response = new AppResponse();
+		$this->response->data = $record->toArray();
+		return $this->response->json_ok();
 	}
 
 	/**

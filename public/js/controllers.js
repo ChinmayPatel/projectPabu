@@ -84,8 +84,15 @@ angular.module('projectPabuTestPage')
     };
 })
 
-.controller( 'CardAccessController', function( $scope , CardAccess, UserCards ) 
+.controller( 'CardAccessController', function( $scope , $rootScope , CardAccess, UserCards , User  ) 
 {
+
+  $scope.user_email = $rootScope.user_email; 
+   User.get( function( data )
+  {
+    $scope.Userlist = data.data;
+  });
+  
   UserCards.get( function( data )
   {
     $scope.userCards = data.data;
@@ -197,4 +204,20 @@ angular.module('projectPabuTestPage')
             },
         ];
     })
+.controller( 'UsersListController', function( $scope ,  $rootScope , $resource , User ) 
+{
+  User.get( function( data )
+  {
+    $scope.Userlist = data.data;
+  });
+
+  $scope.select_user = function( id )
+  {
+    User_single = $resource('/service/user/:id');
+    User_single.get( {id:id}, function( response ) 
+    {
+      $rootScope.user_email = response.data.email;
+  });
+  }
+})
 ;
