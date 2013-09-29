@@ -127,8 +127,8 @@ angular.module('nvd3ChartDirectives', [])
                                     chart.tooltipContent(scope.tooltipcontent());
                                 }
 
-                                configureXaxis(chart, scope, attrs);
-                                configureYaxis(chart, scope, attrs);
+//                                configureXaxis(chart, scope, attrs);
+//                                configureYaxis(chart, scope, attrs);
 
                                 scope.d3Call(data, chart);
 
