@@ -35,6 +35,9 @@ angular.module( 'projectPabuTestPage'
                 .when( '/userslist', 
                      { templateUrl:'partials/userlist.html' }
                      )
+                .when( '/transactions',
+                    { templateUrl:'partials/transactions.html' }
+                )
                 .otherwise( { redirectTo:'/login' } )
             } 
           ]

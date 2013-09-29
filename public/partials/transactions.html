@@ -1,0 +1,41 @@
+<style type="text/css">
+    .tag {
+        display: inline-block;
+        padding: 3px 5px;
+        border: 1px solid transparent;
+    }
+</style>
+
+<div ng-controller="transactionsController">
+
+    <div id="filters">
+
+    </div>
+
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Merchant</th>
+            <th>Amount</th>
+            <th>Tags</th>
+            <th>Pictures</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="t in transactions">
+            <td>{{ t.date }}</td>
+            <td>{{ t.clientName }}</td>
+            <td>{{ t.merchantName }}</td>
+            <td>{{ t.amount }}</td>
+            <td>
+                <a href="#" class="tag" ng-repeat="tag in t.tags">{{ tag }}</a>
+            </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

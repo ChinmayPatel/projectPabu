@@ -47,6 +47,7 @@
         <li><a href="#grantAccess">grantAccess</a></li>
         <li><a href="#userslist">userslist</a></li>
         <li><a href="#report">report</a></li>      
+        <li><a href="#transactions">transactions</a></li>
       </ul>
    </li>
   </header>
