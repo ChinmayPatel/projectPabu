@@ -84,14 +84,12 @@ angular.module('projectPabuTestPage')
     };
 })
 
-.controller( 'CardAccessController', function( $scope , $rootScope , CardAccess, UserCards , User  ) 
+.controller( 'CardAccessController', function( $scope , CardAccess, UserCards , User  ) 
 {
-
-  $scope.user_email = $rootScope.user_email; 
-   User.get( function( data )
-  {
-    $scope.Userlist = data.data;
-  });
+  User.get( function( data )
+    {
+      $scope.Userlist = data.data;
+    });
   
   UserCards.get( function( data )
   {
@@ -104,7 +102,7 @@ angular.module('projectPabuTestPage')
     {
       CardAccess.save(  
         {
-          'reciver_email': $scope.cardaccess.reciver_email
+          'receiver_email': $scope.cardaccess.receiver_email
           , 'amount': $scope.cardaccess.amount
           , 'period': $scope.cardaccess.period
           , 'credit_id': $scope.cardaccess.credit_id.id
@@ -258,20 +256,39 @@ angular.module('projectPabuTestPage')
             },
         ];
     })
-.controller( 'UsersListController', function( $scope ,  $rootScope , $resource , User ) 
+.controller( 'UsersListController', function( $scope ,  $resource , User ) 
 {
   User.get( function( data )
   {
     $scope.Userlist = data.data;
   });
+})
 
-  $scope.select_user = function( id )
-  {
-    User_single = $resource('/service/user/:id');
-    User_single.get( {id:id}, function( response ) 
+.controller( 'GrantAccesUserController', function( $scope , $routeParams, $resource ,CardAccess, UserCards , User  ) 
+{
+  User = $resource("/service/user/:id");
+  User.get( { id:$routeParams.id } ,  function( data )
     {
-      $rootScope.user_email = response.data.email;
+      $scope.user_info = data.data;
+    });
+  
+  UserCards.get( function( data )
+  {
+    $scope.userCards = data.data;
   });
-  }
+    //alert( $scope.userCards );
+
+
+  $scope.submitCardAccess = function()
+    {
+      CardAccess.save(  
+        {
+          'reciver_email':$scope.user_info.email
+          , 'amount': $scope.cardaccess.amount
+          , 'period': $scope.cardaccess.period
+          , 'credit_id': $scope.cardaccess.credit_id.id
+        }
+        )
+    };
 })
 ;

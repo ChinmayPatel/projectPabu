@@ -29,6 +29,9 @@ angular.module( 'projectPabuTestPage'
                 .when( '/report', 
                      { templateUrl:'partials/reporting.html' }
                      )
+                .when( '/grantAccess/:id', 
+                     { templateUrl:'partials/grantaccess_with_user.html' }
+                     )
                 .when( '/grantAccess', 
                      { templateUrl:'partials/grantaccess.html' }
                      )

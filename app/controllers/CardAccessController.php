@@ -31,13 +31,12 @@ class CardAccessController extends \BaseController {
 	{
 		$user = Auth::user();
 		$card = Input::get('credit_id');
-		$receiver_email = Input::get('reciver_email');
+		$reciver = Input::get('receiver_email');
 		$amount = Input::get('amount');
 		$period = Input::get('period');
-		$reciver = User::where('email' , '=' , $receiver_email )->first();
 		$grant_access = New CardGrantedAccess();
 		$grant_access->sender_id = $user->id ;
-		$grant_access->receiver_id = $reciver->id ;
+		$grant_access->receiver_id = $reciver['id']  ;
 		$grant_access->card_id = $card;
 		$grant_access->amount_granted = $amount ; 
 		$grant_access->expires_in = $period ;

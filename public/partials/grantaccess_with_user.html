@@ -1,8 +1,8 @@
-<div ng-controller="CardAccessController">
+<div ng-controller="GrantAccesUserController">
 <form class="form-horizontal" ng-submit="submitCardAccess()">
     <div>
-        <label>Select User: </label>
-        <select id="receiver_email"  ng-model="cardaccess.receiver_email"  autofocus ng-options="user.user_name for user in Userlist">"></select>
+        <label>Selected User: </label>
+         <input id="reciver_email" type="text" autocomplete="off" value="{{user_info.user_name}}" readonly/>
     </div>
     <div>
         <label>Amount: </label>
