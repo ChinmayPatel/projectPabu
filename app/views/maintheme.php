@@ -83,22 +83,22 @@
     <header>
     	<div class="container">
             <div class="row">
-                <div class="span4">
+                <div class="span3">
                     <span class="logo">SpendAlert</span>
                 </div>
                 <!-- MENU
                 ============================= -->
-                <div class="span8">
+                <div class="span9">
                     <nav class="nav-top">
                         <ul class="nav nav-pills top-menu">
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#login">login</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#login">Login</a></li>
                         <!-- <li><a href="#apitest">apiTest</a></li> -->
-                        <li><a href="#paymentform">paymentform</a></li>
-                        <li><a href="#grantAccess">grantAccess</a></li>
-                        <li><a href="#userslist">userslist</a></li>
-                        <li><a href="#report">report</a></li>
-                        <li><a href="#transactions">transactions</a></li>
+                        <li><a href="#paymentform">Paymnet Form</a></li>
+                        <li><a href="#grantAccess">Grant Card Access</a></li>
+                        <li><a href="#userslist">Users' List</a></li>
+                        <li><a href="#report">Report</a></li>
+                        <li><a href="#transactions">Transaction</a></li>
                         </ul>
                     </nav>
                 </div>

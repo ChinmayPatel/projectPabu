@@ -57,7 +57,7 @@
                     <li class="active"><a href="#home">home</a></li>
                     <li><a href="#login">login</a></li>
                     <li><a href="#apitest">apiTest</a></li>
-                    <li><a href="#paymentform">paymentform</a></li>
+                    <li><a href="#paymentform">Paymnet Form</a></li>
                     <li><a href="#grantAccess">grantAccess</a></li>
                     <li><a href="#userslist">userslist</a></li>
                     <li><a href="#report">report</a></li>
