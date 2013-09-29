@@ -2,35 +2,35 @@
 //-----------------------------------------------------------------------------
 //	Fuild layout, centering the items
 $(function() {
-$('#foo5').carouFredSel({
-	width: '100%',
-	scroll: 1,
-	prev: '#prev2',
-	next: '#next2',
-	pagination: "#pager2",
-	visible: {
-		min: 1,
-		max: 4,
-	},
-	auto: {
-		pauseOnHover: 'resume',
-	}
-});
-$('#foo4').carouFredSel({
-	width: '100%',
-	responsive: true,
-	scroll: 1,
-	prev: '#prev3',
-	next: '#next3',
-	pagination: "#pager3",
-	visible: {
-		min: 1,
-		max: 1,
-	},
-	auto: {
-		pauseOnHover: 'resume',
-	}
-});
+// $('#foo5').carouFredSel({
+// 	width: '100%',
+// 	scroll: 1,
+// 	prev: '#prev2',
+// 	next: '#next2',
+// 	pagination: "#pager2",
+// 	visible: {
+// 		min: 1,
+// 		max: 4,
+// 	},
+// 	auto: {
+// 		pauseOnHover: 'resume',
+// 	}
+// });
+// $('#foo4').carouFredSel({
+// 	width: '100%',
+// 	responsive: true,
+// 	scroll: 1,
+// 	prev: '#prev3',
+// 	next: '#next3',
+// 	pagination: "#pager3",
+// 	visible: {
+// 		min: 1,
+// 		max: 1,
+// 	},
+// 	auto: {
+// 		pauseOnHover: 'resume',
+// 	}
+// });
 });
 
 
@@ -66,21 +66,6 @@ jQuery(function($){
 });
 
 
-
-// Twitter plugin
-//-----------------------------------------------------------------------------
-jQuery(function($){
-	$(".tweet").tweet({
-	username: "wrapbootstrap",
-	avatar_size: 30, //If you remove the comment from this line will display the avatar of twitter username and you must remove the default twitter icon from css/jquery.tweet.css
-	count: 2,
-	loading_text: "loading tweets..."
-	});
-});
-
-
-
-
 // Flickr plugin
 //-----------------------------------------------------------------------------
 $('.basicuse').jflickrfeed({
@@ -96,9 +81,9 @@ $('.basicuse').jflickrfeed({
 
 // Go to top
 //-----------------------------------------------------------------------------
-$(document).ready(function() {
-	$().UItoTop({ easingType: 'easeOutQuart' });
-});
+// $(document).ready(function() {
+// 	$().UItoTop({ easingType: 'easeOutQuart' });
+// });
 
 
 

@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('main');
+	return View::make('maintheme');
 });
 
 Route::group(array('prefix' => 'service'), function() {
