@@ -1,6 +1,7 @@
 <div ng-controller="GrantAccesUserController" class="span4 offset4">
 <h3>Grant Card Access to  {{user_info.user_name}}</h13>
 <form class="form-horizontal" ng-submit="submitCardAccess()">
+    <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
     <div>
         <label>Selected User: </label>
          <input id="reciver_email" type="text" autocomplete="off" value="{{user_info.user_name}}" readonly/>
