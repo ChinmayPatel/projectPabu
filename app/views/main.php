@@ -13,15 +13,20 @@
     <script src="lib/js/angular-sanitize.js"></script>
     <script src="lib/js/ui-bootstrap-tpls.js"></script>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.simplify.com/commerce/v1/simplify.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.simplify.com/commerce/v1/simplify.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/simplify_submit.js"></script>
 
-<script src="js/simplify_submit.js"></script>
+
+    <script src="lib/js/d3.js"></script>
+    <script src="lib/js/nv.d3.js"></script>
+    <script src="lib/js/nvd3Directives.js"></script>
+    <link rel="stylesheet" href="lib/css/nv.d3.css"/>
 
 
     <link href="lib/css/bootstrap.css" rel="stylesheet" />
@@ -41,6 +46,7 @@
         <li><a href="#paymentform">paymentform</a></li>
         <li><a href="#grantAccess">grantAccess</a></li>
         <li><a href="#userslist">userslist</a></li>
+        <li><a href="#report">report</a></li>      
       </ul>
    </li>
   </header>

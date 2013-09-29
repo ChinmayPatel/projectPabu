@@ -2,6 +2,7 @@ angular.module( 'projectPabuTestPage'
               , [ 'ngResource'
                 , 'ngSanitize'
                 , 'ui.bootstrap'
+                , 'nvd3ChartDirectives'
                 ]
               )
 
@@ -24,6 +25,9 @@ angular.module( 'projectPabuTestPage'
                      )
                 .when( '/paymentform', 
                      { templateUrl:'partials/paymentform.html' }
+                     )
+                .when( '/report', 
+                     { templateUrl:'partials/reporting.html' }
                      )
                 .when( '/grantAccess', 
                      { templateUrl:'partials/grantaccess.html' }
